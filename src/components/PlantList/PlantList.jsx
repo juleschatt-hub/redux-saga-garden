@@ -5,10 +5,11 @@ import { useDispatch, useSelector} from 'react-redux';
 function PlantList() {
     const dispatch = useDispatch();
 
-    const reduxState = useSelector(store => store);
+    const reduxState = useSelector(store => store.plantList);
 
     useEffect(() => {
         // dispatch an action to request the plantList from the API
+        dispatch({type: 'FETCH_PLANTS'})
     }, []); 
 
     return (
